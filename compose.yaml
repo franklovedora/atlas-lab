@@ -1,0 +1,8 @@
+services:
+  atlas:
+    image: nginx:stable-alpine
+    ports:
+      - "${ATLAS_BIND:-127.0.0.1}:8080:80"
+    volumes:
+      - ./docs:/usr/share/nginx/html:ro
+    restart: unless-stopped
